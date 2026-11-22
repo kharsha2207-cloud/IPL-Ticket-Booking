@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,16 +23,16 @@
             <li><a href="#booking">Book Tickets</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#guidelines">Guidelines</a></li>
-
-<a href="booking.html">Book IPL Tickets</a>
-
+            <li><a href="booking.html">Book IPL Tickets</a></li>
         </ul>
     </nav>
 
     <main>
 
+        <!-- HOME SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
+
                 <h2>Experience the Thrill of IPL 2026!</h2>
 
                 <p>
@@ -41,11 +42,17 @@
                 </p>
 
                 <a href="#matches" class="btn">View Schedule</a>
-                <a href="#booking" class="btn">Book Tickets</a>
+
+                <button type="button" id="bookBtn" class="btn">
+                    Book Tickets
+                </button>
+
             </div>
         </section>
 
+        <!-- ABOUT SECTION -->
         <section id="about">
+
             <h2>About IPL 2026</h2>
 
             <p>
@@ -64,12 +71,16 @@
                 <li>Rajasthan Royals</li>
                 <li>Gujarat Titans</li>
             </ul>
+
         </section>
 
+        <!-- MATCH SCHEDULE -->
         <section id="matches">
+
             <h2>IPL 2026 Match Schedule</h2>
 
             <div class="table-container">
+
                 <table>
                     <thead>
                         <tr>
@@ -81,6 +92,7 @@
                     </thead>
 
                     <tbody>
+
                         <tr>
                             <td>RCB vs MI</td>
                             <td>April 10, 2026</td>
@@ -101,40 +113,53 @@
                             <td>7:00 PM</td>
                             <td>Wankhede Stadium</td>
                         </tr>
+
                     </tbody>
                 </table>
+
             </div>
+
         </section>
 
+        <!-- BOOKING FORM -->
         <section id="booking">
+
             <h2>Book Your Tickets</h2>
 
             <p>Fill in the details below to book your IPL tickets.</p>
 
-            <form action="#" method="get">
+            <form id="bookingForm" action="#" method="get">
 
                 <div class="form-group">
+
                     <label for="name">Full Name:</label>
+
                     <input
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Enter your full name"
                         required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="email">Email Address:</label>
+
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="Enter your email"
                         required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="phone">Phone Number:</label>
+
                     <input
                         type="tel"
                         id="phone"
@@ -143,48 +168,108 @@
                         pattern="[0-9]{10}"
                         maxlength="10"
                         required>
+
                 </div>
 
+                <!-- MATCH SELECTOR -->
                 <div class="form-group">
+
                     <label for="match">Select Match:</label>
+
                     <select id="match" name="match" required>
+
                         <option value="">-- Select Match --</option>
                         <option value="RCB vs MI">RCB vs MI</option>
                         <option value="CSK vs KKR">CSK vs KKR</option>
                         <option value="RR vs GT">RR vs GT</option>
+
                     </select>
+
                 </div>
 
+                <!-- STAND CATEGORY SELECTOR -->
                 <div class="form-group">
-                    <label for="ticket">Number of Tickets:</label>
-                    <select id="ticket" name="ticket" required>
-                        <option value="">-- Select Tickets --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-                    <label for="stand">Select Stand:</label>
+                    <label for="stand">Select Stand Category:</label>
+
                     <select id="stand" name="stand" required>
+
                         <option value="">-- Select Stand --</option>
-                        <option value="General Stand">General Stand</option>
-                        <option value="Premium Stand">Premium Stand</option>
-                        <option value="VIP Stand">VIP Stand</option>
+
+                        <option value="General Stand">
+                            General Stand - ₹1000
+                        </option>
+
+                        <option value="Premium Stand">
+                            Premium Stand - ₹2000
+                        </option>
+
+                        <option value="VIP Stand">
+                            VIP Stand - ₹3500
+                        </option>
+
                     </select>
+
+                </div>
+
+                <!-- NUMBER INPUT -->
+                <div class="form-group">
+
+                    <label for="ticket">Number of Tickets:</label>
+
+                    <input
+                        type="number"
+                        id="ticket"
+                        name="ticket"
+                        min="1"
+                        max="10"
+                        value="1"
+                        required>
+
                 </div>
 
                 <button type="submit" class="book-btn">
                     Book Tickets
                 </button>
 
+                <button type="reset" class="reset-btn">
+                    Reset
+                </button>
+
             </form>
+
+            <!-- BOOKING SUMMARY CARD -->
+            <div class="summary-card" id="summaryCard">
+
+                <h2>Booking Summary</h2>
+
+                <p>
+                    <strong>Selected Match:</strong>
+                    <span id="summaryMatch">Not Selected</span>
+                </p>
+
+                <p>
+                    <strong>Stand Category:</strong>
+                    <span id="summaryStand">Not Selected</span>
+                </p>
+
+                <p>
+                    <strong>Ticket Quantity:</strong>
+                    <span id="summaryQuantity">1</span>
+                </p>
+
+                <h3>
+                    Total Price: ₹
+                    <span id="totalPrice">0</span>
+                </h3>
+
+            </div>
+
         </section>
 
+        <!-- GUIDELINES -->
         <section id="guidelines">
+
             <h2>Match Guidelines and Stadium Rules</h2>
 
             <h3>Entry Guidelines</h3>
@@ -214,14 +299,24 @@
                 <li>Do not enter restricted areas.</li>
                 <li>Tickets are subject to the stadium's terms and conditions.</li>
             </ul>
+
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
+
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
-        <p>Designed using HTML and CSS.</p>
+        <p>Designed using HTML, CSS and JavaScript.</p>
+
     </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast"></div>
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="app.js"></script>
 
 </body>
 </html>

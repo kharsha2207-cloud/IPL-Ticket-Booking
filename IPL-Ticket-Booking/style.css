@@ -1,3 +1,4 @@
+
 :root {
     --primary: #101d3a;
     --accent: #f5b82e;
@@ -226,6 +227,100 @@ select:focus {
     padding: 14px;
 }
 
+/* RESET BUTTON */
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    background-color: #e5e7eb;
+    color: var(--primary);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: #cbd5e1;
+}
+
+/* ACTIVITY 7: BOOKING SUMMARY CARD */
+.summary-card {
+    max-width: 600px;
+    margin: 35px auto 10px;
+    padding: 25px;
+    background: linear-gradient(
+        135deg,
+        #101d3a,
+        #294c85
+    );
+    color: var(--white);
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.summary-card h2 {
+    color: var(--accent);
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.summary-card p {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+}
+
+.summary-card strong {
+    color: var(--accent);
+}
+
+.summary-card span {
+    color: var(--white);
+    font-weight: bold;
+}
+
+.summary-card h3 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+/* TOAST NOTIFICATION */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    max-width: 90%;
+    background-color: #198754;
+    color: var(--white);
+    text-align: center;
+    border-radius: 8px;
+    padding: 14px 20px;
+    position: fixed;
+    z-index: 2000;
+    bottom: 30px;
+    right: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
 #guidelines {
     border-left: 5px solid var(--accent);
 }
@@ -250,7 +345,9 @@ footer p {
     margin: 5px;
 }
 
+/* TABLET RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
+
     header h1 {
         font-size: 25px;
     }
@@ -275,9 +372,15 @@ footer p {
     .hero-content p {
         font-size: 17px;
     }
+
+    .summary-card {
+        padding: 20px;
+    }
 }
 
+/* MOBILE RESPONSIVE DESIGN */
 @media screen and (max-width: 480px) {
+
     header h1 {
         font-size: 21px;
     }
@@ -303,5 +406,18 @@ footer p {
 
     section {
         padding: 18px;
+    }
+
+    .summary-card p {
+        font-size: 14px;
+    }
+
+    .summary-card h3 {
+        font-size: 20px;
+    }
+
+    #toast {
+        right: 5%;
+        bottom: 15px;
     }
 }
