@@ -25,6 +25,7 @@ body {
     line-height: 1.6;
 }
 
+/* HEADER */
 header {
     background-color: var(--primary);
     color: var(--white);
@@ -42,6 +43,7 @@ header p {
     font-size: 16px;
 }
 
+/* NAVIGATION */
 nav {
     background-color: var(--primary);
     position: sticky;
@@ -72,6 +74,55 @@ nav ul li a:hover {
     color: var(--accent);
 }
 
+/* ACTIVITY 8: RESPONSIVE NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 30px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    color: var(--accent);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* GENERAL SECTIONS */
 section {
     background-color: var(--white);
     width: 90%;
@@ -100,6 +151,7 @@ section p {
     margin-bottom: 15px;
 }
 
+/* HOME HERO SECTION */
 .hero {
     background: linear-gradient(
         135deg,
@@ -126,6 +178,7 @@ section p {
     margin: 0 auto 25px;
 }
 
+/* BUTTONS */
 .btn,
 .book-btn {
     display: inline-block;
@@ -149,6 +202,7 @@ section p {
     transform: scale(1.05);
 }
 
+/* TEAM LIST */
 .team-list {
     padding-left: 25px;
 }
@@ -158,6 +212,7 @@ section p {
     font-size: 17px;
 }
 
+/* TABLE */
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -189,6 +244,7 @@ tbody tr:hover {
     background-color: #fff0c2;
 }
 
+/* FORMS */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -321,6 +377,7 @@ select:focus {
     opacity: 1;
 }
 
+/* GUIDELINES */
 #guidelines {
     border-left: 5px solid var(--accent);
 }
@@ -333,6 +390,129 @@ select:focus {
     margin: 10px 0;
 }
 
+/* ACTIVITY 8: GUIDELINES GRID */
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.guideline-card {
+    background-color: #f4f6fa;
+    border-left: 5px solid var(--accent);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.guideline-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.guideline-card ul {
+    padding-left: 20px;
+}
+
+.guideline-card li {
+    margin-bottom: 10px;
+}
+
+/* ACTIVITY 8: MATCH FILTER CONTROLS */
+.match-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.view-buttons button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-buttons button:hover,
+.view-buttons button.active-view {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* ACTIVITY 8: MATCH CARDS USING CSS GRID */
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.match-card {
+    background-color: var(--white);
+    border: 1px solid #dddddd;
+    border-top: 5px solid var(--accent);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.match-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.match-card p {
+    margin: 8px 0;
+}
+
+.match-card strong {
+    color: #b8860b;
+}
+
+/* ACTIVITY 8: LIST VIEW USING FLEXBOX */
+.match-grid.list-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.match-grid.list-view .match-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* NO MATCHES MESSAGE */
+#noMatches {
+    text-align: center;
+    color: #b00020;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+/* FOOTER */
 footer {
     background-color: var(--primary);
     color: var(--white);
@@ -346,6 +526,18 @@ footer p {
 }
 
 /* TABLET RESPONSIVE DESIGN */
+@media screen and (max-width: 900px) {
+
+    .match-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guidelines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
 
     header h1 {
@@ -376,9 +568,55 @@ footer p {
     .summary-card {
         padding: 20px;
     }
+
+    /* MOBILE NAVIGATION */
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* MATCH CARDS */
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .match-grid.list-view .match-card {
+        flex-direction: column;
+    }
+
+    /* GUIDELINES */
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FILTER CONTROLS */
+    .match-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .view-buttons {
+        justify-content: center;
+    }
 }
 
-/* MOBILE RESPONSIVE DESIGN */
+/* SMALL MOBILE RESPONSIVE DESIGN */
 @media screen and (max-width: 480px) {
 
     header h1 {
@@ -419,5 +657,22 @@ footer p {
     #toast {
         right: 5%;
         bottom: 15px;
+    }
+
+    .nav-logo a {
+        font-size: 19px;
+    }
+
+    .match-card {
+        padding: 17px;
+    }
+
+    .guideline-card {
+        padding: 16px;
+    }
+
+    .view-buttons button {
+        padding: 9px 13px;
+        font-size: 14px;
     }
 }
